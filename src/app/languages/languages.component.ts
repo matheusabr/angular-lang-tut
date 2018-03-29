@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Language } from '../models/language.model';
-import { LANGUAGES } from '../mocks/language.mock';
+import { LanguageService } from '../language.service';
 
 
 @Component({
@@ -10,16 +10,24 @@ import { LANGUAGES } from '../mocks/language.mock';
   styleUrls: ['./languages.component.css']
 })
 export class LanguagesComponent implements OnInit {
-  languages: Language[] = LANGUAGES;
+  languages: Language[];
   selectedLanguage: Language;
 
-  constructor() { }
+  constructor(
+    private languageService: LanguageService
+  ) { }
 
   ngOnInit() {
+    this.getLanguages();
   }
 
   onSelect(language: Language): void {
     this.selectedLanguage = language;
+  }
+
+  getLanguages(): void {
+    this.languageService.getLanguages()
+      .subscribe(lang => this.languages = lang);
   }
 
 }

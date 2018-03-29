@@ -7,6 +7,8 @@ import { LanguagesComponent } from './languages/languages.component';
 import { FormsModule } from '@angular/forms';
 import { LanguageDetailComponent } from './language-detail/language-detail.component'; // <-- NgModel lives here
 
+import { LanguageService } from './language.service';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LanguageDetailComponent } from './language-detail/language-detail.compo
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    LanguageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
