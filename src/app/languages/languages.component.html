@@ -1,1 +1,9 @@
-{{ language }}
+<h2>{{ language.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ language.id }}</div>
+<div><span>name: </span>{{ language.name }}</div>
+
+<div>
+    <label>name:
+      <input [(ngModel)]="language.name" placeholder="name">
+    </label>
+</div>
