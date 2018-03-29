@@ -1,9 +1,20 @@
-<h2>{{ language.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ language.id }}</div>
-<div><span>name: </span>{{ language.name }}</div>
+<h2>Javascript Languages</h2>
+<ul class="language">
+  <li *ngFor="let language of languages"
+    [class.selected]="language === selectedLanguage"
+    (click)="onSelect(language)">
+    <span class="badge">{{ language.id }}</span> {{ language.name }}
+  </li>
+</ul>
 
-<div>
-    <label>name:
-      <input [(ngModel)]="language.name" placeholder="name">
-    </label>
+<div *ngIf="selectedLanguage">
+  <h2>{{ selectedLanguage.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ selectedLanguage.id }}</div>
+  <div><span>name: </span>{{ selectedLanguage.name }}</div>
+
+  <div>
+      <label>name:
+        <input [(ngModel)]="selectedLanguage.name" placeholder="name">
+      </label>
+  </div>
 </div>

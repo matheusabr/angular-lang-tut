@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Language } from '../language';
+import { Language } from '../models/language.model';
+import { LANGUAGES } from '../mocks/language.mock';
+
 
 @Component({
   selector: 'app-languages',
@@ -8,14 +10,16 @@ import { Language } from '../language';
   styleUrls: ['./languages.component.css']
 })
 export class LanguagesComponent implements OnInit {
-  language: Language = {
-    id:       1,
-    name:     'Angular',
-  };
+  languages: Language[] = LANGUAGES;
+  selectedLanguage: Language;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(language: Language): void {
+    this.selectedLanguage = language;
   }
 
 }
