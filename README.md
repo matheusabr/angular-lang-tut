@@ -1,4 +1,7 @@
-# AngularLangTut
+# Angular Languages - Tutorial
+
+Project started to test Angular Official Tutorial
+https://angular.io/tutorial/toh-pt1#the-hero-editor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
