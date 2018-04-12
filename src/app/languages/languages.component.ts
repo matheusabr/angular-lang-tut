@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Language } from '../models/language.model';
 import { LanguageService } from '../language.service';
 
-
 @Component({
   selector: 'app-languages',
   templateUrl: './languages.component.html',

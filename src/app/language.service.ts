@@ -6,12 +6,19 @@ import { of } from 'rxjs/observable/of';
 import { Language } from './models/language.model';
 import { LANGUAGES } from './mocks/language.mock';
 
+import { MessageService } from './message.service';
+
+
 @Injectable()
 export class LanguageService {
 
-  constructor() { }
+  constructor(
+    private messageService: MessageService
+  ) { }
 
   getLanguages(): Observable<Language[]> {
+    // Todo: send the message _after_ fetching the languages
+    this.messageService.add('LanguageService: fetched languages');
     return of(LANGUAGES);
   }
 

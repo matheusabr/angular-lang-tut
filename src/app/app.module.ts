@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { LanguageDetailComponent } from './language-detail/language-detail.component'; // <-- NgModel lives here
 
 import { LanguageService } from './language.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 
 
 @NgModule({
@@ -15,13 +17,15 @@ import { LanguageService } from './language.service';
     AppComponent,
     LanguagesComponent,
     LanguageDetailComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
   providers: [
-    LanguageService
+    LanguageService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
