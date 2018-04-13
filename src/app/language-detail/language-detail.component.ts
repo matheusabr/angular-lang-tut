@@ -34,4 +34,9 @@ export class LanguageDetailComponent implements OnInit {
       .subscribe(language => this.language = language);
   }
 
+  save(): void {
+    this.languageService.updateLanguage(this.language)
+      .subscribe(() => this.goBack());
+  }
+
 }
