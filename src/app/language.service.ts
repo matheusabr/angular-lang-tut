@@ -18,8 +18,14 @@ export class LanguageService {
 
   getLanguages(): Observable<Language[]> {
     // Todo: send the message _after_ fetching the languages
-    this.messageService.add('LanguageService: fetched languages');
+    this.messageService.add(`LanguageService: fetched languages`);
     return of(LANGUAGES);
+  }
+
+  getLanguage(id: number): Observable<Language> {
+    // Todo: send the message _after_ fetching the languages
+    this.messageService.add(`LanguageService: fetched language id=${id}`);
+    return of(LANGUAGES.find(language => language.id === id));
   }
 
 }

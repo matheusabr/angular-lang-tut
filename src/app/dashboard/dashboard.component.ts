@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Language } from '../models/language.model';
 import { LanguageService } from '../language.service';
 
 @Component({
-  selector: 'app-languages',
-  templateUrl: './languages.component.html',
-  styleUrls: ['./languages.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class LanguagesComponent implements OnInit {
-  languages: Language[];
+export class DashboardComponent implements OnInit {
+  languages: Language[] = [];
 
   constructor(
     private languageService: LanguageService
@@ -21,7 +20,7 @@ export class LanguagesComponent implements OnInit {
 
   getLanguages(): void {
     this.languageService.getLanguages()
-      .subscribe(lang => this.languages = lang);
+      .subscribe( languages => this.languages = languages.slice(1, 4));
   }
 
 }
