@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   getLanguages(): void {
     this.languageService.getLanguages()
-      .subscribe( languages => this.languages = languages.slice(1, 4));
+      .subscribe( languages => this.languages = languages.slice(1, 5));
   }
 
 }
