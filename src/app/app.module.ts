@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { LanguageSearchComponent } from './language-search/language-search.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     LanguageDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    LanguageSearchComponent,
   ],
   imports: [
     BrowserModule,

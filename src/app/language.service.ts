@@ -72,6 +72,20 @@ export class LanguageService {
     );
   }
 
+  /* GET languages whose name contains search term */
+  searchLanguages(term: string): Observable<Language[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    
+    return this.http.get<Language[]>(`api/languages/?name=${term}`)
+      .pipe(
+        tap(_ => this.log(`found languages matching "${term}"`)),
+        catchError(this.handleError<Language[]>('searchLanguages', []))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
